@@ -1,4 +1,4 @@
-# Lunyad – Backyard-Ultra Live-Dashboard
+# Lüneryard – Backyard-Ultra Live-Dashboard
 
 FSST-Projekt. Eine Desktop-App (Electron), die mehrere **Strava-Beacon-Livekarten**
 gleichzeitig zeigt und für ein **Backyard-Ultra-Rennen** automatisch Runden, Zeiten,
