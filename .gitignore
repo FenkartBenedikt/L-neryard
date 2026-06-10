@@ -1,0 +1,14 @@
+# Abhängigkeiten
+node_modules/
+src/node_modules/
+
+# Build-Ausgaben (zu groß für GitHub: Electron-Runtime > 100 MB)
+bin/Lunyad-win32-x64/
+bin/win-unpacked/
+src/dist/
+*.log
+
+# Editor / Tool-Konfiguration
+.claude/
+src/.claude/
+.DS_Store

@@ -1,0 +1,54 @@
+{
+  "name": "lunyad",
+  "productName": "Lunyad",
+  "version": "1.0.0",
+  "description": "Backyard-Ultra Live-Dashboard für Strava-Beacon-Links",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "icon": "node build/gen-icon.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^42.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.lunyad.livewall",
+    "productName": "Lunyad",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "assets/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        "portable"
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Lunyad"
+    },
+    "portable": {
+      "artifactName": "Lunyad-portable-${version}.exe"
+    }
+  }
+}

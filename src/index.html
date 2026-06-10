@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Map Wall</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="controls" class="controls">
+      <div class="control-row">
+        <label for="panelCount">Anzahl Felder</label>
+        <select id="panelCount">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <button id="updateGridBtn">Felder aktualisieren</button>
+        <button id="stravaStatsBtn" type="button" class="toggle-active">Strava Stats: An</button>
+        <button id="liveModeBtn" class="live-btn">Live Mode</button>
+        <button id="themeToggleBtn" type="button">Hellmodus: Aus</button>
+      </div>
+
+      <div class="control-row backyard-config">
+        <label for="backyardStart">Backyard Start</label>
+        <input type="time" id="backyardStart" step="1" />
+        <label for="backyardRoundMin">Rundenzeit (Min)</label>
+        <input type="number" id="backyardRoundMin" min="1" value="60" />
+        <label for="backyardRoundDist">Rundenstrecke (km)</label>
+        <input type="number" id="backyardRoundDist" min="0.1" step="0.1" value="0.5" />
+        <button id="backyardSaveBtn" type="button">Werte übernehmen</button>
+        <button id="backyardToggleBtn" type="button">Backyard: Aus</button>
+        <button id="backyardResetBtn" type="button">Reset</button>
+      </div>
+
+      <div id="urlInputs" class="url-inputs"></div>
+      <p class="hint">
+        Tipp: Strava-Beacon-Links nutzen das eigene Live-Panel. Mit Esc verlaesst du den Live Mode.
+        Backyard: Startzeit setzen und aktivieren, dann erscheint unten der Info-Streifen.
+      </p>
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <footer id="backyardStrip" class="backyard-strip" hidden>
+      <div class="backyard-strip__topbar">
+        <div class="backyard-strip__countdown">
+          <span class="backyard-strip__round" data-by-round>Runde —</span>
+          <span class="backyard-strip__remaining" data-by-remaining>--:--</span>
+          <span class="backyard-strip__remaining-label" data-by-remaining-label>bis Start</span>
+        </div>
+        <div class="backyard-strip__status" data-by-summary></div>
+        <div class="backyard-strip__clock" data-by-clock>--:--:--</div>
+      </div>
+      <div class="backyard-strip__progress">
+        <div class="backyard-track">
+          <div class="backyard-track__line"></div>
+          <div class="backyard-track__runners" data-by-runners></div>
+          <span class="backyard-track__axis backyard-track__axis--start">0 m</span>
+          <span class="backyard-track__axis backyard-track__axis--end" data-by-end>—</span>
+        </div>
+      </div>
+      <div class="backyard-strip__participants" data-by-participants>—</div>
+    </footer>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
