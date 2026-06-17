@@ -115,5 +115,8 @@ h1(pdf, "4. Teamauflistung")
 bullet(pdf, "Fenkart, Benedikt")
 bullet(pdf, "Sukhrukov, Maksym")
 
+h1(pdf, "5. KI-Einsatz & Vorgehen")
+body(pdf, "Wir haben das Projekt bewusst mit Unterstützung von Künstlicher Intelligenz umgesetzt, dabei aber großen Wert darauf gelegt, den Code selbst zu verstehen. Als Modell kam Claude Opus 4.8 zum Einsatz. Unser Vorgehen war iterativ: Statt alles auf einmal zu verlangen, haben wir die App Feature für Feature aufgebaut und für jeden Schritt einen möglichst klaren, präzisen Prompt geschrieben. Ein guter Prompt hat bei uns immer das Ziel, die gewünschten Funktionen und das erwartete Verhalten genau beschrieben – zum Beispiel „die Rundenzeit soll als echte Sekundenuhr ab dem Rundenstart laufen und einfrieren, sobald das Streckenziel erreicht ist\". Je genauer der Prompt, desto besser das Ergebnis. Nach jedem Schritt haben wir das Resultat geprüft: den Code gelesen, die App gestartet und getestet und bei Bedarf den Prompt nachgeschärft oder Korrekturen verlangt. So sind wir Schritt für Schritt vom Grundgerüst (mehrere Karten anzeigen) über die Strava-Auswertung bis zur kompletten Backyard-Logik gekommen. Die KI haben wir außerdem für Nebenaufgaben genutzt – etwa für das App-Icon, die Dokumentation und die Präsentation. Wichtig war uns dabei: Die KI liefert Vorschläge, die Entscheidungen und das Verständnis bleiben aber bei uns. Wir mussten den erzeugten Code nachvollziehen, einordnen und testen, damit am Ende ein Programm entsteht, das wir auch selbst erklären können.")
+
 pdf.output(OUT)
 print("erstellt:", OUT)
